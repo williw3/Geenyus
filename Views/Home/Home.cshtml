@@ -1,0 +1,26 @@
+@model belt2.Models.RegisterIdeaModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Dojo Idea Center</h1><a href="logout">Logout</a>
+<h3>Welcome: @ViewBag.username</h3>
+
+<form asp-controller="Home" asp-action="addidea" method="post">
+    <label asp-for="Description"></label><br>
+    <textarea asp-for="Description"></textarea><br>
+    <span asp-validation-for="Description"></span><br>
+    <button style="margin-bottom: 10px;">Add Idea</button>
+</form>
+
+@foreach (var idea in @ViewBag.GeniusIdeas)
+{
+    <h4><a href="showuser/@idea.User.UserId">@idea.User.Alias</a> says:</h4><h4>@idea.Description</h4>
+    <h5><a href="addlike/@idea.UserId">Like</a></h5>
+    <h5><a href="showlikers/@idea.IdeaId">@idea.IdeaLikes.Count people</a> like this</h5>
+    @if (idea.User.UserId == @ViewBag.UserId)
+    {
+        <h5><a href="deletepost/@idea.IdeaId">Delete</a></h5>
+    }
+    <hr>
+}

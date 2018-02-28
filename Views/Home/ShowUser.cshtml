@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Show User Page";
+}
+<a href="/home">Home</a> | <a href="/logout">Logout</a>
+
+@foreach (var user in ViewBag.ThisUser)
+{
+    <h2>Name: @user.Name</h2>
+    <h2>Alias: @user.Alias</h2>
+    <h2>Email: @user.EmailAddress</h2>
+    <hr>
+    
+    <h3>Total number of likes: @user.UserLikes.Count</h3>
+    <h3>Total number of posts: @user.UserIdeas.Count</h3>
+}
+
+

@@ -1,0 +1,10 @@
+/Users/leewatterson/Desktop/DojoAssignments/netCore/belt2/bin/Debug/netcoreapp2.0/belt2.deps.json
+/Users/leewatterson/Desktop/DojoAssignments/netCore/belt2/bin/Debug/netcoreapp2.0/belt2.runtimeconfig.json
+/Users/leewatterson/Desktop/DojoAssignments/netCore/belt2/bin/Debug/netcoreapp2.0/belt2.runtimeconfig.dev.json
+/Users/leewatterson/Desktop/DojoAssignments/netCore/belt2/bin/Debug/netcoreapp2.0/belt2.dll
+/Users/leewatterson/Desktop/DojoAssignments/netCore/belt2/bin/Debug/netcoreapp2.0/belt2.pdb
+/Users/leewatterson/Desktop/DojoAssignments/netCore/belt2/obj/Debug/netcoreapp2.0/belt2.csproj.CoreCompileInputs.cache
+/Users/leewatterson/Desktop/DojoAssignments/netCore/belt2/obj/Debug/netcoreapp2.0/belt2.AssemblyInfoInputs.cache
+/Users/leewatterson/Desktop/DojoAssignments/netCore/belt2/obj/Debug/netcoreapp2.0/belt2.AssemblyInfo.cs
+/Users/leewatterson/Desktop/DojoAssignments/netCore/belt2/obj/Debug/netcoreapp2.0/belt2.dll
+/Users/leewatterson/Desktop/DojoAssignments/netCore/belt2/obj/Debug/netcoreapp2.0/belt2.pdb

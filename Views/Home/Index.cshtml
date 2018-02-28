@@ -1,0 +1,39 @@
+﻿@model belt2.Models.RegisterUserModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<form asp-action="register" method="post">
+    <label asp-for="Name"></label><br>
+    <input asp-for="Name"><br>
+    <span class="" asp-validation-for="Name"></span><br>
+    <label asp-for="Alias"></label><br>
+    <input asp-for="Alias"><br>
+    <span class="" asp-validation-for="Alias"></span><br>
+    <label asp-for="EmailAddress"></label><br>
+    <input asp-for="EmailAddress"><br>
+    <span class="" asp-validation-for="EmailAddress"></span><br>
+    <label asp-for="Password"></label><br>
+    <input asp-for="Password"><br>
+    <span class="" asp-validation-for="Password"></span><br>
+    <label asp-for="ConfirmPassword"></label><br>
+    <input asp-for="ConfirmPassword"><br>
+    <span class="" asp-validation-for="ConfirmPassword"></span><br>
+
+    <button style="margin-top: 10px;" >Register</button>
+
+</form><br>
+
+
+<h1>Log In</h1>
+<form action="login" method="post">
+    <label for="EmailAddress">Email Address</label><br>
+    <input type="email" name="EmailAddress"><br>
+    <span class="">@ViewBag.emailerror</span><br>
+    
+    <label for="Password">Password</label><br>
+    <input type="password" name="Password"><br>
+    <span class="">@ViewBag.pwerror</span><br>
+    <button style="margin-top: 10px;">Login</button>
+</form><br>

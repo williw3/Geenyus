@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Show Liker Page";
+}
+
+<a href="/home">Home</a> | <a href="/logout">Logout</a>
+
+@foreach (var att in ViewBag.ThisIdea)
+{
+<h4><a href="/showuser/@att.User.UserId">@att.User.Alias</a> says:</h4>
+<h4>@att.Description</h4>
+<hr>
+<h5>People who liked this post:</h5>
+
+}
+
+<table class="table table-hover table-bordered" width="100%">
+    <thead>
+        <tr>
+            <th>Alias</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entry in ViewBag.ThisIdea)
+        {
+            foreach (var like in entry.IdeaLikes)
+            {
+            <tr>
+                <td><a href="/showuser/@like.User.UserId">@like.User.Alias</a></td>
+                <td>@like.User.Name</td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>
