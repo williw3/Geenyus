@@ -1,39 +1,46 @@
 ﻿@model belt2.Models.RegisterUserModel
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Login Registration Page";
 }
 
-
-<form asp-action="register" method="post">
-    <label asp-for="Name"></label><br>
-    <input asp-for="Name"><br>
-    <span class="" asp-validation-for="Name"></span><br>
-    <label asp-for="Alias"></label><br>
-    <input asp-for="Alias"><br>
-    <span class="" asp-validation-for="Alias"></span><br>
-    <label asp-for="EmailAddress"></label><br>
-    <input asp-for="EmailAddress"><br>
-    <span class="" asp-validation-for="EmailAddress"></span><br>
-    <label asp-for="Password"></label><br>
-    <input asp-for="Password"><br>
-    <span class="" asp-validation-for="Password"></span><br>
-    <label asp-for="ConfirmPassword"></label><br>
-    <input asp-for="ConfirmPassword"><br>
-    <span class="" asp-validation-for="ConfirmPassword"></span><br>
-
-    <button style="margin-top: 10px;" >Register</button>
-
-</form><br>
-
-
-<h1>Log In</h1>
-<form action="login" method="post">
-    <label for="EmailAddress">Email Address</label><br>
-    <input type="email" name="EmailAddress"><br>
-    <span class="">@ViewBag.emailerror</span><br>
-    
-    <label for="Password">Password</label><br>
-    <input type="password" name="Password"><br>
-    <span class="">@ViewBag.pwerror</span><br>
-    <button style="margin-top: 10px;">Login</button>
-</form><br>
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1>Welcome to Geenyus</h1>
+        <p>This is a website for brainstorming new project ideas. Upvote your favorites</p>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <h1>Register</h1>
+            <form asp-action="register" method="post">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control">
+                <span class="alert-danger" asp-validation-for="Name"></span><br>
+                <label asp-for="Alias"></label>
+                <input asp-for="Alias" class="form-control">
+                <span class="alert-danger" asp-validation-for="Alias"></span><br>
+                <label asp-for="EmailAddress"></label>
+                <input asp-for="EmailAddress" class="form-control">
+                <span class="alert-danger" asp-validation-for="EmailAddress"></span><br>
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control">
+                <span class="alert-danger" asp-validation-for="Password"></span><br>
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control">
+                <span class="alert-danger" asp-validation-for="ConfirmPassword"></span><br>
+                <input type="submit" class="btn btn-default" value="Register">
+            </form>
+    </div>
+    <div class="form-group col-md-6">
+        <h1>Log In</h1>
+        <form action="login" method="post">
+            <label for="EmailAddress">Email Address</label>
+            <input type="email" name="EmailAddress" class="form-control">
+            <span class="alert-danger">@ViewBag.emailerror</span><br>
+            <label for="Password">Password</label>
+            <input type="password" name="Password" class="form-control">
+            <span class="alert-danger">@ViewBag.pwerror</span><br>
+            <input type="submit" class="btn btn-default" value="Login">
+        </form>     
+    </div>      
+</div>

@@ -16,6 +16,5 @@ namespace belt2.Models
             UserLikes = new List<Like>();
             UserIdeas = new List<Idea>();
         }
-
     }
 }

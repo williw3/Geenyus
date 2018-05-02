@@ -30,13 +30,20 @@ namespace belt2.Controllers
         [Route("home")]
         public IActionResult Home()
         {
-
             int? UserId = HttpContext.Session.GetInt32("UserId");
-            ViewBag.UserId = UserId;
-            ViewBag.username = HttpContext.Session.GetString("Username");
-            List<Idea> GeniusIdeas = _context.Ideas.Include(i => i.User).Include(l => l.IdeaLikes).OrderByDescending(c => c.IdeaLikes.Count).ToList();
-            ViewBag.GeniusIdeas = GeniusIdeas;
-            return View();
+            if(UserId == null){
+                return RedirectToAction("Index");
+            }
+            else{
+                ViewBag.UserId = UserId;
+                ViewBag.username = HttpContext.Session.GetString("Username");
+                List<Idea> GeniusIdeas = _context.Ideas.Include(i => i.User).Include(l => l.IdeaLikes).OrderByDescending(c => c.IdeaLikes.Count).ToList();
+                int GeniusIdeasCount = GeniusIdeas.Count;
+                ViewBag.GeniusIdeasCount = GeniusIdeasCount;
+                ViewBag.GeniusIdeas = GeniusIdeas;
+                
+                return View();
+            } 
         }
 
         [HttpPost]
@@ -55,7 +62,8 @@ namespace belt2.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Home");
             }
-            ViewBag.Ideas = _context.Ideas.Include(i => i.User);
+            List<Idea> GeniusIdeas = _context.Ideas.Include(i => i.User).Include(l => l.IdeaLikes).OrderByDescending(c => c.IdeaLikes.Count).ToList();
+            ViewBag.GeniusIdeas = GeniusIdeas;
             return View("Home");
         }
 
